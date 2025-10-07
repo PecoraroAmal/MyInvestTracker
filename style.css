@@ -136,7 +136,25 @@ body {
 }
 
 .donate-btn:hover {
-    background-color: #28a78c;
+    background-color: #97d02c;
+    box-shadow: 0 4px 15px rgba(51, 153, 102, 0.2);
+    border-color: #28a745;
+}
+
+.git-btn {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: #28a745;
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-top: 3em;
+    transition: background-color 0.3s ease;
+}
+
+.git-btn:hover {
+    background-color: #97d02c;
     box-shadow: 0 4px 15px rgba(51, 153, 102, 0.2);
     border-color: #28a745;
 }
