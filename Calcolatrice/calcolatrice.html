@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyInvestTracker - Calcolatrice</title>
+    <link rel="stylesheet" href="calcolatrice.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="calcolatrice.js" defer></script>
+    <link rel="icon" type="image/png" href="/../asset/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/../asset/favicon.svg" />
+    <link rel="shortcut icon" href="/../asset/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/../asset/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyInvestTracker" />
+    <link rel="manifest" href="/../asset/site.webmanifest" />
+</head>
+<body>
+    <nav class="sidebar">
+        <a href="../index.html" data-label="Home"><i class="fa-solid fa-house"></i></a>
+        <a href="../Tracker/tracker.html" data-label="Tracker"><i class="fa-solid fa-chart-simple"></i></a>
+        <a href="../PAC/pac.html" data-label="PAC"><i class="fa-solid fa-coins"></i></a>
+        <a href="../Variazione/variazione.html" data-label="Variation"><i class="fa-solid fa-plus-minus"></i></a>
+        <a href="../Editor/editor.html" data-label="Editor"><i class="fa-solid fa-file-pen"></i></a>
+        <a href="calcolatrice.html" data-label="Calculator"  class="active"><i class="fas fa-balance-scale"></i></a>
+        <a href="../Info/info.html" data-label="Info"><i class="fa-solid fa-circle-info"></i></a>
+    </nav>
+    <div class="container">
+        <h1>Calcolatrice di Distribuzione Portafoglio</h1>
+        <div class="upload-section">
+            <label for="json-upload" class="file-drop-area">
+                <input type="file" id="json-upload" accept=".json" class="file-input">
+                <span>Trascina qui il tuo file JSON o clicca per selezionarlo</span>
+            </label>
+            <div class="file-name"></div>
+        </div>
+        <div id="input-section" class="section-card hidden">
+            <h2>Inserisci Dati</h2>
+            <div class="form-group">
+                <p>
+                    <label>Importo massimo da investire (€):</label>
+                    <input type="number" id="max-budget" placeholder="Inserisci il budget massimo" min="0">
+                </p>
+            </div>
+            <div class="table-container">
+                <table id="asset-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nome Asset</th>
+                            <th>Percentuale Attuale (%)</th>
+                            <th>Quantità Posseduta</th>
+                            <th>Prezzo (€)</th>
+                            <th>Percentuale Desiderata (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="asset-table-body"></tbody>
+                </table>
+                <div id="remaining-percentage" class="summary-text">Percentuale rimanente: 100%</div>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="fractional-calc" name="fractional-calc">
+                <label for="fractional-calc">Abilita calcolo di quantità frazionate</label>
+            </div>
+            <div id="error" class="error-text"></div>
+            <button id="calculate-button" class="calculate-button">Calcola</button>
+        </div>
+        <div id="within-budget-section" class="section-card hidden">
+            <h2>Distribuzione entro Budget</h2>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nome Asset</th>
+                            <th>Quantità Attuale</th>
+                            <th>Nuova Quantità</th>
+                            <th>Azione</th>
+                            <th>Costo (€)</th>
+                            <th>Percentuale Richiesta (%)</th>
+                            <th>Percentuale Reale (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="within-budget-table-body"></tbody>
+                </table>
+            </div>
+            <div id="within-budget-summary" class="summary-text"></div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 MyInvestTracker   | La tua privacy è garantita: nessun dato personale viene raccolto o memorizzato.</p>
+    </footer>
+</body>
+</html>

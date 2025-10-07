@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano di Accumulo Capitale</title>
+    <link rel="stylesheet" href="pac.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="pac.js" defer></script>
+    <link rel="icon" type="image/png" href="/../asset/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/../asset/favicon.svg" />
+    <link rel="shortcut icon" href="/../asset/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/../asset/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyInvestTracker" />
+    <link rel="manifest" href="/../asset/site.webmanifest" />
+</head>
+<body>
+    <nav class="sidebar">
+        <a href="../index.html" data-label="Home"><i class="fa-solid fa-house"></i></a>
+        <a href="../Tracker/tracker.html" data-label="Tracker"><i class="fa-solid fa-chart-simple"></i></a>
+        <a href="pac.html" data-label="PAC" class="active"><i class="fa-solid fa-coins"></i></a>
+        <a href="../Variazione/variazione.html" data-label="Variation"><i class="fa-solid fa-plus-minus"></i></a>
+        <a href="../Editor/editor.html" data-label="Editor"><i class="fa-solid fa-file-pen"></i></a>
+        <a href="../Calcolatrice/calcolatrice.html" data-label="Calculator"><i class="fas fa-balance-scale"></i></a>
+        <a href="../Info/info.html" data-label="Info"><i class="fa-solid fa-circle-info"></i></a>
+    </nav>
+
+    <div class="main-content">
+        <h1>Calcolatore Piano di Accumulo Capitale</h1>
+        <div class="container">
+            <form id="calc-form" class="form-group">
+                <p>
+                    <label for="initial">Investimento iniziale (€):</label>
+                    <input type="number" step="0.01" id="initial" min="0" required>
+                </p>
+                <p>
+                    <label for="recurring">Importo ricorrente (€):</label>
+                    <input type="number" step="0.01" id="recurring" min="0" required>
+                </p>
+                <p>
+                    <label for="cadence">Cadenza di versamento (mesi, 1-12):</label>
+                    <input type="number" id="cadence" min="1" max="12" required>
+                </p>
+                <p>
+                    <label for="rate">Rendimento annuo (%):</label>
+                    <input type="number" step="0.01" id="rate" min="0" required>
+                </p>
+                <p>
+                    <label for="duration">Durata in anni:</label>
+                    <input type="number" id="duration" min="1" required>
+                </p>
+                <button type="button" onclick="calculate()">Calcola</button>
+            </form>
+
+            <div id="output" class="hidden">
+                <div id="results">
+                    <p id="final">Patrimonio finale stimato: </p>
+                    <p id="total">Totale investito: </p>
+                    <p id="profit">Profitto ottenuto: </p>
+                </div>
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MyInvestTracker   | La tua privacy è garantita: nessun dato personale viene raccolto o memorizzato.</p>
+    </footer>
+</body>
+</html>

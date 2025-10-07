@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="stylesheet" href="tracker.css">
+    <link rel="icon" type="image/png" href="/../asset/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/../asset/favicon.svg" />
+    <link rel="shortcut icon" href="/../asset/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/../asset/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyInvestTracker" />
+    <link rel="manifest" href="/../asset/site.webmanifest" />
+</head>
+<body>
+    <nav class="sidebar">
+        <a href="../index.html" data-label="Home"><i class="fa-solid fa-house"></i></a>
+        <a href="tracker.html" data-label="Tracker" class="active"><i class="fa-solid fa-chart-simple"></i></a>
+        <a href="../PAC/pac.html" data-label="PAC"><i class="fa-solid fa-coins"></i></a>
+        <a href="../Variazione/variazione.html" data-label="Variation"><i class="fa-solid fa-plus-minus"></i></a>
+        <a href="../Editor/editor.html" data-label="Editor"><i class="fa-solid fa-file-pen"></i></a>
+        <a href="../Calcolatrice/calcolatrice.html" data-label="Calculator"><i class="fas fa-balance-scale"></i></a>
+        <a href="../Info/info.html" data-label="Info"><i class="fa-solid fa-circle-info"></i></a>
+    </nav>
+    <div class="container">
+        <h1>Investment Tracker</h1>
+        <div class="upload-section">
+            <label for="json-upload" class="file-drop-area">
+                <input type="file" id="json-upload" accept=".json" class="file-input">
+                <span>Trascina qui il tuo file JSON o clicca per selezionarlo</span>
+            </label>
+            <div id="error" class="error-text"></div>
+        </div>
+        <div id="summary-section" class="section-card hidden">
+            <h2>Riepilogo Investimenti</h2>
+            <div class="filter-section">
+                <input type="text" id="search-input" placeholder="Cerca per nome, categoria, ISIN o TICKER" class="search-input">
+                <select id="category-filter" class="filter-select">
+                    <option value="">Tutte le categorie</option>
+                </select>
+            </div>
+            <div class="table-container">
+                <table id="summary-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>ISIN</th>
+                            <th>TICKER</th>
+                            <th>Quantità</th>
+                            <th>Capitale Investito</th>
+                            <th>Valore Attuale</th>
+                        </tr>
+                    </thead>
+                    <tbody id="summary-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+        <div id="doughnut-section" class="section-card hidden">
+            <h2>Ripartizione Investimenti</h2>
+            <div class="chart-container">
+                <canvas id="doughnut-chart"></canvas>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nome Asset</th>
+                            <th>Capitale Investito</th>
+                            <th>Valore Attuale</th>
+                            <th>Rendimento</th>
+                        </tr>
+                    </thead>
+                    <tbody id="legend-table-body"></tbody>
+                </table>
+            </div>
+            <div id="investment-summary" class="summary-text"></div>
+        </div>
+        <div id="line-chart-section" class="section-card hidden">
+            <h2>Andamento Investimenti</h2>
+            <div class="chart-container">
+                <canvas id="line-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 MyInvestTracker   | La tua privacy è garantita: nessun dato personale viene raccolto o memorizzato.</p>
+    </footer>
+    <script src="tracker.js"></script>
+</body>
+</html>

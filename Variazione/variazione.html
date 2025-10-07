@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variazione</title>
+    <link rel="stylesheet" href="variazione.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/../asset/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/../asset/favicon.svg" />
+    <link rel="shortcut icon" href="/../asset/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/../asset/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyInvestTracker" />
+    <link rel="manifest" href="/../asset/site.webmanifest" />
+</head>
+<body>
+    <nav class="sidebar">
+        <a href="../index.html" data-label="Home"><i class="fa-solid fa-house"></i></a>
+        <a href="../Tracker/tracker.html" data-label="Tracker"><i class="fa-solid fa-chart-simple"></i></a>
+        <a href="../PAC/pac.html" data-label="PAC"><i class="fa-solid fa-coins"></i></a>
+        <a href="variazione.html" data-label="Variation" class="active"><i class="fa-solid fa-plus-minus"></i></a>
+        <a href="../Editor/editor.html" data-label="Editor"><i class="fa-solid fa-file-pen"></i></a>
+        <a href="../Calcolatrice/calcolatrice.html" data-label="Calculator"><i class="fas fa-balance-scale"></i></a>
+        <a href="../Info/info.html" data-label="Info"><i class="fa-solid fa-circle-info"></i></a>
+    </nav>
+
+    <div class="main-content">
+        <h1>Variazione</h1>
+        <div class="container">
+            <div class="form-group">
+                <p>
+                    <label>Valore iniziale:</label>
+                    <input type="number" id="initialValue" step="0.01">
+                </p>
+                <p>
+                    <label>Nuovo valore:</label>
+                    <input type="number" id="newValue" step="0.01">
+                </p>
+                <button onclick="calcolaVariazione()">Calcola</button>
+                <p id="unitaOutput"></p>
+                <p id="percentualeOutput"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MyInvestTracker   | La tua privacy è garantita: nessun dato personale viene raccolto o memorizzato.</p>
+    </footer>
+    <script src="variazione.js"></script>
+</body>
+</html>
