@@ -1,6 +1,6 @@
 {
-  "name": "MyInvestTracker",
-  "short_name": "MyInvestTracker",
+  "name": "MyWebSite",
+  "short_name": "MySite",
   "icons": [
     {
       "src": "/../asset/web-app-manifest-192x192.png",
