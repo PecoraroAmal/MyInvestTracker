@@ -65,10 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Funzione per evidenziare il link attivo nella sidebar
+// Funzione per evidenziare il link attivo nella navbar
 function setActiveNavLink() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.sidebar a');
+    const navLinks = document.querySelectorAll('.navbar a');
     
     navLinks.forEach(link => {
         const href = link.getAttribute('href');

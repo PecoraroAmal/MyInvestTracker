@@ -1,3 +1,4 @@
+/* Stili generali del corpo della pagina */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     margin: 0;
@@ -7,47 +8,54 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
-}
-
-/* Sidebar verticale */
-.sidebar {
-    background-color: #ffffff;
-    border-right: 1px solid #e5e5e5;
-    width: 70px;
-    min-height: 100vh;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 0;
-    position: fixed;
-    left: 0;
-    top: 0;
+    box-sizing: border-box;
 }
 
-.sidebar a {
+/* Navbar orizzontale in alto */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Stili per i link della navbar */
+.navbar a {
     color: #333333;
-    margin: 1rem 0;
+    margin: 0 1.5rem;
     font-size: 1.5rem;
     text-decoration: none;
     position: relative;
 }
 
-.sidebar a:hover {
+/* Effetto hover sui link */
+.navbar a:hover {
     color: #28a745;
 }
 
-/* Icona corrente in blu */
-.sidebar a.active {
+/* Icona corrente in verde */
+.navbar a.active {
     color: #28a745;
 }
 
-/* Tooltip custom */
-.sidebar a::after {
+/* Tooltip custom per i link */
+.navbar a::after {
     content: attr(data-label);
     position: absolute;
-    left: 60px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     background: #333;
     color: #fff;
     padding: 4px 8px;
@@ -59,25 +67,25 @@ body {
     transition: opacity 0.2s ease-in-out;
 }
 
-.sidebar a:hover::after {
+/* Mostra il tooltip al passaggio del mouse */
+.navbar a:hover::after {
     opacity: 1;
 }
 
-/* Contenuto centrato */
+/* Contenitore principale centrato */
 .container {
-    max-width: 100%;
-    margin: 0 auto;
+    width: 90%; /* Occupa il 90% della larghezza */
+    margin: 80px 5% 4rem; /* 5% di margine a sinistra e destra */
     padding: 2rem 1rem;
-    padding-left: 90px;
     text-align: center;
     flex: 1;
-    margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
 }
 
+/* Titolo principale */
 .container h1 {
     font-size: 2.5rem;
     font-weight: 600;
@@ -87,6 +95,7 @@ body {
     padding: 1rem 0;
 }
 
+/* Sottotitolo */
 .container h2 {
     font-size: 1.25rem;
     font-weight: 500;
@@ -94,6 +103,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Sezione di upload */
 .upload-section {
     margin-bottom: 1.5rem;
     display: flex;
@@ -102,10 +112,12 @@ body {
     gap: 0.75rem;
 }
 
+/* Nasconde l'input file nativo */
 .file-input {
     display: none;
 }
 
+/* Area di drag-and-drop per i file */
 .file-drop-area {
     display: flex;
     align-items: center;
@@ -123,29 +135,34 @@ body {
     transition: background-color 0.3s, border-color 0.3s;
 }
 
+/* Effetto hover e stato attivo per l'area di drag-and-drop */
 .file-drop-area:hover,
 .file-drop-area.drag-active {
     background-color: #e6e6e6;
     border-color: #007bff;
 }
 
+/* Testo all'interno dell'area di drag-and-drop */
 .file-drop-area span {
     padding: 0.5rem;
     font-weight: 500;
 }
 
+/* Testo di errore */
 .error-text {
     color: #dc3545;
     font-size: 0.9rem;
     text-align: center;
 }
 
+/* Nome del file caricato */
 .file-name {
     font-size: 0.9rem;
     color: #555555;
     text-align: center;
 }
 
+/* Sezione card */
 .section-card {
     background-color: #ffffff;
     border: 1px solid #e5e5e5;
@@ -154,6 +171,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Sottotitolo nella card */
 .section-card h2 {
     font-size: 1.25rem;
     font-weight: 500;
@@ -161,6 +179,7 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Sezione dei filtri */
 .filter-section {
     display: flex;
     flex-wrap: wrap;
@@ -169,12 +188,14 @@ body {
     justify-content: center;
 }
 
+/* Contenitore per il dropdown */
 .dropdown {
     position: relative;
     width: 100%;
     max-width: 400px;
 }
 
+/* Pulsante del dropdown */
 .dropdown-button {
     width: 100%;
     padding: 0.5rem;
@@ -188,12 +209,14 @@ body {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+/* Effetto hover e stato attivo per il pulsante del dropdown */
 .dropdown-button:hover,
 .dropdown-button.active {
     border-color: #007bff;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
+/* Menu del dropdown */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -210,10 +233,12 @@ body {
     display: none;
 }
 
+/* Menu del dropdown attivo */
 .dropdown-menu.active {
     display: block;
 }
 
+/* Gruppo di checkbox */
 .checkbox-group {
     display: flex;
     flex-direction: column;
@@ -221,6 +246,7 @@ body {
     width: 100%;
 }
 
+/* Etichetta per i checkbox */
 .checkbox-label {
     display: flex;
     align-items: center;
@@ -230,6 +256,7 @@ body {
     cursor: pointer;
 }
 
+/* Checkbox */
 .filter-checkbox {
     width: 1.2rem;
     height: 1.2rem;
@@ -237,10 +264,12 @@ body {
     cursor: pointer;
 }
 
+/* Testo delle etichette dei checkbox */
 .checkbox-label span {
     font-weight: 500;
 }
 
+/* Input di ricerca */
 .search-input {
     padding: 0.5rem;
     border: 1px solid #e5e5e5;
@@ -250,12 +279,14 @@ body {
     max-width: 400px;
 }
 
+/* Stile focus per l'input di ricerca */
 .search-input:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
+/* Select per i filtri */
 .filter-select {
     padding: 0.5rem;
     border: 1px solid #e5e5e5;
@@ -265,32 +296,38 @@ body {
     width: 100%;
 }
 
+/* Stile focus per il select */
 .filter-select:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
+/* Gruppi di opzioni nel select */
 .filter-select optgroup {
     font-weight: 600;
     color: #333333;
 }
 
+/* Opzioni nel select */
 .filter-select option {
     padding-left: 1.5rem;
 }
 
+/* Contenitore per la tabella */
 .table-container {
     overflow-x: auto;
     width: 100%;
 }
 
+/* Tabella dati */
 .data-table {
     width: 100%;
     font-size: 0.9rem;
     border-collapse: collapse;
 }
 
+/* Intestazioni e celle della tabella */
 .data-table th,
 .data-table td {
     padding: 0.75rem;
@@ -298,10 +335,12 @@ body {
     border: 1px solid #e5e5e5;
 }
 
+/* Intestazione della tabella */
 .data-table thead tr {
     background-color: #f8f9fa;
 }
 
+/* Contenitore del grafico */
 .chart-container {
     max-width: 95%;
     width: 100%;
@@ -309,31 +348,37 @@ body {
     height: 500px;
 }
 
+/* Canvas del grafico */
 .chart-container canvas {
     max-width: 100% !important;
     height: 100% !important;
 }
 
+/* Grafico a linee */
 #line-chart {
     height: 500px !important;
     max-height: 500px !important;
 }
 
+/* Testo di riepilogo */
 .summary-text {
     margin-top: 1rem;
     font-size: 0.9rem;
     color: #555555;
 }
 
+/* Div nel testo di riepilogo */
 .summary-text div {
     padding: 0.5rem;
     border-radius: 0.25rem;
 }
 
+/* Classe per nascondere elementi */
 .hidden {
     display: none;
 }
 
+/* Footer */
 footer {
     background-color: #ffffff;
     color: #555555;
@@ -347,35 +392,35 @@ footer {
     left: 0;
 }
 
+/* Testo del footer */
 footer p {
     margin: 0;
     font-size: 0.875rem;
 }
 
-/* Mobile */
+/* Stili per dispositivi mobili */
 @media (max-width: 414px) {
-    .sidebar {
-        flex-direction: row;
-        width: 100%;
-        height: 60px;
-        min-height: auto;
-        border-right: none;
-        border-bottom: 1px solid #e5e5e5;
-        position: fixed;
-        top: 0;
-        left: 0;
-        justify-content: space-around;
+    .navbar {
+        height: 50px;
+        justify-content: space-between;
+        padding: 0 0.5rem;
+    }
+
+    .navbar a {
+        margin: 0 0.75rem; /* Ridotto il margine per mostrare tutte le icone */
+        font-size: 1.2rem;
+    }
+
+    .navbar a::after {
+        display: none;
     }
 
     .container {
-        margin-left: 0;
-        padding: 1.5rem 1rem;
         margin-top: 70px;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 1.5rem 1rem;
         margin-bottom: 4rem;
-    }
-
-    .sidebar a::after {
-        display: none;
     }
 
     body {
