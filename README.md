@@ -18,13 +18,15 @@ MyInvestTracker è progettato per aiutarti a monitorare e gestire i tuoi investi
 - 🔐 **Privacy al primo posto** – Nessun dato personale raccolto. Tutti i dati vengono elaborati localmente sul tuo dispositivo.
 
 ---
-
 ## 🌍 La nostra visione
 
-> Vogliamo aiutare gli utenti a prendere il controllo delle proprie finanze con strumenti accessibili e trasparenti.
+> Consentire a chiunque di tenere traccia dei propri investimenti in modo semplice, autonomo e con la massima privacy.
 
-La nostra missione è semplificare la gestione degli investimenti, rendendola comprensibile e alla portata di tutti, indipendentemente dal livello di esperienza finanziaria.
+Crediamo che la gestione delle finanze personali debba essere accessibile a tutti, senza compromettere la sicurezza e la riservatezza dei dati.
 
+## 🎯 La nostra missione
+
+> Semplificare la gestione degli investimenti attraverso strumenti intuitivi, trasparenti e completamente privati, per dare agli utenti il pieno controllo del proprio percorso finanziario.
 ---
 
 ## 🛡️ Privacy e Sicurezza
