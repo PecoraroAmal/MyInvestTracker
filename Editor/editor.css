@@ -209,6 +209,23 @@ body {
     border-radius: 4px;
 }
 
+/* Scroll orizzontale per le tabelle */
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
 /* Stili per il pulsante di download */
 .download-button {
     margin-top: 1.5rem;

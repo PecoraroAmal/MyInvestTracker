@@ -282,7 +282,11 @@ function renderTable(jsonData) {
         tbody.appendChild(addAssetRow);
 
         table.appendChild(tbody);
-        tableContainer.appendChild(table);
+        const scrollWrapper = document.createElement('div');
+        scrollWrapper.className = 'table-container';
+        scrollWrapper.appendChild(table);
+        tableContainer.appendChild(scrollWrapper);
+
     });
 }
 
