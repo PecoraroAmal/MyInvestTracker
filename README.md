@@ -5,7 +5,7 @@
 
 **La tua soluzione per gestire gli investimenti**
 
-MyInvestTracker è progettato per aiutarti a monitorare e gestire i tuoi investimenti in modo semplice, chiaro ed efficace. Che tu sia un investitore esperto o alle prime armi, il nostro obiettivo è fornirti strumenti intuitivi per prendere decisioni informate.
+MyInvestTracker è progettato per offrirti un’esperienza piacevole nel monitorare e gestire i tuoi investimenti. Che tu sia un investitore esperto o alle prime armi, il nostro obiettivo è metterti a disposizione tutti gli strumenti necessari.
 
 ---
 
