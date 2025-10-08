@@ -21,21 +21,112 @@
         <a href="Variazione/variazione.html" data-label="Variation"><i class="fa-solid fa-plus-minus"></i></a>
         <a href="Editor/editor.html" data-label="Editor"><i class="fa-solid fa-file-pen"></i></a>
         <a href="Calcolatrice/calcolatrice.html" data-label="Calculator"><i class="fas fa-balance-scale"></i></a>
-        <a href="Info/info.html" data-label="Info"><i class="fa-solid fa-circle-info"></i></a>
     </nav>
 
     <div class="container">
-        <h1>Benvenuto su MyInvestTracker</h1>
-        <h2>La tua soluzione per gestire gli investimenti</h2>
-        <p>MyInvestTracker è progettato per aiutarti a monitorare e gestire i tuoi investimenti in modo semplice, chiaro ed efficace. Che tu sia un investitore esperto o alle prime armi, il nostro obiettivo è fornirti strumenti che garantiscono la privacy.<br> <i>Il sito funziona meglio da desktop</i></p>
-        
-        <h3>La nostra visione</h3>
-        <p>Vogliamo aiutare gli utenti a prendere il controllo delle loro finanze con strumenti accessibili e trasparenti. La nostra visione è quella di semplificare la gestione degli investimenti, rendendo il processo comprensibile e alla portata di tutti. <br>(<i>Il programma potrebbe non essere esente da errori.</i>)</p>
-        
-        <h3>La tua privacy è la nostra priorità</h3>
-        <p>In MyInvestTracker, la tua privacy è al primo posto. Non raccogliamo né memorizziamo i tuoi dati personali. Tutti i calcoli e le informazioni inserite vengono elaborati localmente sul tuo dispositivo, garantendo la massima sicurezza e riservatezza.</p>
-        
-        <p>Inizia oggi a monitorare i tuoi investimenti con il nostro <a href="tracker.html">Tracker</a>, pianifica il tuo futuro con il <a href="pac.html">Piano di Accumulo Capitale</a> o calcola le variazioni dei tuoi asset con <a href="variazione.html">Variazione</a>.</p>
+        <div class="hero-section">
+            <h1>
+                <i class="fas fa-chart-pie"></i>
+                Benvenuto su MyInvestTracker
+            </h1>
+            <p class="subtitle">La tua soluzione per gestire gli investimenti</p>
+        </div>
+
+        <div class="intro-card">
+            <div class="intro-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h2>Privacy Garantita</h2>
+            <p>MyInvestTracker è progettato per aiutarti a monitorare e gestire i tuoi investimenti in modo semplice, chiaro ed efficace. Che tu sia un investitore esperto o alle prime armi, il nostro obiettivo è fornirti strumenti che garantiscono la privacy. Tutti i dati rimangono sul tuo dispositivo, nessuna informazione viene salvata sui nostri server.</p>
+            <p><i>Il sito funziona meglio da desktop</i></p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon editor">
+                    <i class="fa-solid fa-file-pen"></i>
+                </div>
+                <h3>Editor</h3>
+                <p>Modifica graficamente il tuo portfolio. Al primo caricamento sembrerà vuoto, ma appena aggiungerai un nuovo asset il tuo JSON prenderà forma.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon tracker">
+                    <i class="fa-solid fa-chart-simple"></i>
+                </div>
+                <h3>Tracker</h3>
+                <p>Visualizza graficamente il tuo portfolio. Carica il JSON modificato nell'editor per vedere tutte le statistiche e i grafici dei tuoi investimenti. <strong>Include dati di default che vengono sovrascritti caricando il tuo JSON senza interferenze.</strong></p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon pac">
+                    <i class="fa-solid fa-coins"></i>
+                </div>
+                <h3>PAC</h3>
+                <p>Simula un Piano di Accumulo Capitale. Nota: potrebbero esserci errori nei calcoli, ci scusiamo per eventuali imprecisioni.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon variazione">
+                    <i class="fa-solid fa-plus-minus"></i>
+                </div>
+                <h3>Variazione</h3>
+                <p>Calcolo veloce della variazione percentuale di un asset. Inserisci solo due valori (prima e dopo) per ottenere il risultato.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon calcolatrice">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <h3>Calcolatrice</h3>
+                <p>Effettua la ripartizione ottimale del tuo portfolio in base alle percentuali desiderate e al budget disponibile. <strong>Include dati di default che vengono sovrascritti caricando il tuo JSON senza interferenze.</strong></p>
+            </div>
+        </div>
+
+        <div class="getting-started-section">
+            <h2>Come Iniziare</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Scarica il Template JSON</h4>
+                        <p>Scarica il file template per iniziare a costruire il tuo portfolio</p>
+                        <button id="download-template" class="btn-primary">
+                            <i class="fas fa-download"></i>
+                            Scarica Template
+                        </button>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Modifica con l'Editor</h4>
+                        <p>Carica il file nell'editor e aggiungi i tuoi asset</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Visualizza nel Tracker</h4>
+                        <p>Carica il file modificato nel tracker per vedere i tuoi dati</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vision-section">
+            <h3>La nostra visione</h3>
+            <p>Vogliamo aiutare gli utenti a prendere il controllo delle loro finanze con strumenti accessibili e trasparenti. La nostra visione è quella di semplificare la gestione degli investimenti, rendendo il processo comprensibile e alla portata di tutti.</p>
+            <p><i>Il programma potrebbe non essere esente da errori.</i></p>
+        </div>
+
+        <div class="privacy-notice">
+            <i class="fas fa-shield-alt"></i>
+            <strong>Nota sulla Privacy:</strong> In MyInvestTracker, la tua privacy è al primo posto. Non raccogliamo né memorizziamo i tuoi dati personali. Tutti i calcoli e le informazioni inserite vengono elaborati localmente sul tuo dispositivo, garantendo la massima sicurezza e riservatezza.
+        </div>
+
         <div class="donation-button">
             <p>Se trovi utile MyInvestTracker, considera di supportarci con una donazione:</p>
             <a href="https://www.paypal.com/donate/?hosted_button_id=5Z5N9EBJERXC6" target="_blank" class="donate-btn">
@@ -43,14 +134,18 @@
             </a>
             <p>La donazione è <strong>completamente volontaria</strong> e <strong>non garantisce accesso a funzionalità aggiuntive</strong>. Serve esclusivamente a supportare il progetto.</p>
         </div>
-        <div class="git-button"></div>
+
+        <div class="git-button">
             <a href="https://github.com/PecoraroAmal/MyInvestTracker" target="_blank" class="git-btn">
                 <i class="fa-brands fa-github"></i> Visualizza il progetto su GitHub
             </a>
         </div>
     </div>
+
     <footer>
-        <p>&copy; 2025 MyInvestTracker   | La tua privacy è garantita: nessun dato personale viene raccolto o memorizzato.</p>
+        <p>&copy; 2025 MyInvestTracker | La tua privacy è garantita: nessun dato personale viene raccolto o memorizzato.</p>
     </footer>
+
+    <script src="home.js"></script>
 </body>
 </html>
