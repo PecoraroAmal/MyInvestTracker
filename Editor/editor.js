@@ -263,7 +263,7 @@ function renderTable(jsonData) {
         const addAssetButton = document.createElement('button');
         addAssetButton.textContent = `Aggiungi Nuovo Asset a ${category}`;
         addAssetButton.style.padding = '0.5rem 1rem';
-        addAssetButton.style.backgroundColor = '#2563eb';
+        addAssetButton.style.backgroundColor = '#28a745';
         addAssetButton.style.color = '#ffffff';
         addAssetButton.style.border = 'none';
         addAssetButton.style.borderRadius = '4px';

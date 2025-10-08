@@ -18,7 +18,7 @@ body {
     background-color: #ffffff;
     border-bottom: 1px solid #e5e5e5;
     width: 100%;
-    height: 12%;
+    height: 90px;
     display: flex;
     justify-content: center; /* Centrato per icone vicine */
     align-items: center;
@@ -47,30 +47,6 @@ body {
 /* Icona corrente in verde */
 .navbar a.active {
     color: #28a745;
-}
-
-/* Tooltip custom per i link */
-.navbar a::after {
-    content: attr(data-label);
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease-in-out;
-    margin-top: 8px; /* Spazio per evitare sovrapposizioni */
-}
-
-/* Mostra il tooltip al passaggio del mouse */
-.navbar a:hover::after {
-    opacity: 1;
 }
 
 /* Contenitore principale centrato */
@@ -140,7 +116,7 @@ body {
 .file-drop-area:hover,
 .file-drop-area.drag-active {
     background-color: #e6e6e6;
-    border-color: #007bff;
+    border-color: #28a745;
 }
 
 /* Testo all'interno dell'area di drag-and-drop */
@@ -213,7 +189,7 @@ body {
 /* Effetto hover e stato attivo per il pulsante del dropdown */
 .dropdown-button:hover,
 .dropdown-button.active {
-    border-color: #007bff;
+    border-color: #28a745;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
@@ -261,7 +237,7 @@ body {
 .filter-checkbox {
     width: 1.2rem;
     height: 1.2rem;
-    accent-color: #007bff;
+    accent-color: #28a745;
     cursor: pointer;
 }
 
@@ -283,7 +259,7 @@ body {
 /* Stile focus per l'input di ricerca */
 .search-input:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #28a745;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
@@ -300,7 +276,7 @@ body {
 /* Stile focus per il select */
 .filter-select:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #28a745;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
