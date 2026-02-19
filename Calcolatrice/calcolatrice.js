@@ -421,7 +421,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // algoritmo di riequilibrio con supporto opzionale per asset frazionali
+    // Calcola il gap totale dalle percentuali desiderate
+    function calculateGap(assets, portfolioValue) {
+        return assets.reduce((gap, a) => {
+            const value = a.newQuantity * a.price;
+            const percentage = portfolioValue > 0 ? (value / portfolioValue) * 100 : 0;
+            return gap + Math.abs(percentage - a.requestedPercentage);
+        }, 0);
+    }
+
+    // algoritmo di riequilibrio greedy: ad ogni passo cerca di ridurre il gap dalle % desiderate
     function calculateRebalancedPortfolio(assetData, maxBudget, totalCurrentValue, allowFractional = false) {
         const result = assetData.map(a => ({
             nome: a.nome,
@@ -435,47 +444,57 @@ document.addEventListener('DOMContentLoaded', () => {
         }));
 
         let remainingBudget = maxBudget;
-        let totalInvestment = totalCurrentValue;
+        let currentPortfolioValue = totalCurrentValue;
 
-        for (const asset of result) {
-            const targetValue = (asset.requestedPercentage / 100) * (totalCurrentValue + maxBudget);
-            const targetQty = allowFractional 
-                ? Math.round((targetValue / asset.price) * 100) / 100
-                : Math.floor(targetValue / asset.price);
-            
-            const toBuy = Math.max(0, targetQty - asset.currentQuantity);
-            if (toBuy <= (allowFractional ? 0.01 : 1) - 0.001) continue;
+        // Algoritmo greedy: ad ogni passo, compra l'asset che riduce più il gap
+        while (remainingBudget > 0.01) {
+            const unitSize = allowFractional ? Math.min(0.1, remainingBudget / 100) : 1;
+            let bestAssetIdx = -1;
+            let bestGapReduction = 0;
+            const currentGap = calculateGap(result, currentPortfolioValue);
 
-            const cost = toBuy * asset.price;
-            if (cost <= remainingBudget) {
-                asset.newQuantity = allowFractional 
-                    ? Math.round((asset.currentQuantity + toBuy) * 100) / 100
-                    : Math.floor(asset.currentQuantity + toBuy);
-                asset.cost = cost;
-                asset.action = `Acquista ${formatNumber(toBuy)} unità`;
-                remainingBudget -= cost;
-                totalInvestment += cost;  // Aggiorna il valore totale dell'investimento
-            } else {
-                const affordable = allowFractional 
-                    ? Math.floor((remainingBudget / asset.price) * 100) / 100
-                    : Math.floor(remainingBudget / asset.price);
-                
-                if (affordable >= (allowFractional ? 0.01 : 1)) {
-                    asset.newQuantity = allowFractional 
-                        ? Math.round((asset.currentQuantity + affordable) * 100) / 100
-                        : Math.floor(asset.currentQuantity + affordable);
-                    asset.cost = affordable * asset.price;
-                    asset.action = `Acquista ${formatNumber(affordable)} unità (budget limitato)`;
-                    remainingBudget -= asset.cost;
-                    totalInvestment += asset.cost;  // Aggiorna il valore totale dell'investimento
+            // Valuta quale asset conviene comprare
+            for (let i = 0; i < result.length; i++) {
+                const asset = result[i];
+                const cost = unitSize * asset.price;
+
+                if (cost > remainingBudget) continue;
+
+                // Simula l'acquisto
+                asset.newQuantity += unitSize;
+                const newPortfolioValue = currentPortfolioValue + cost;
+                const newGap = calculateGap(result, newPortfolioValue);
+                asset.newQuantity -= unitSize;  // Rollback
+
+                // Calcola il miglioramento
+                const gapReduction = currentGap - newGap;
+                if (gapReduction > bestGapReduction) {
+                    bestGapReduction = gapReduction;
+                    bestAssetIdx = i;
                 }
             }
+
+            // Se non c'è miglioramento significativo, esci
+            if (bestAssetIdx === -1 || bestGapReduction < 0.001) break;
+
+            // Applica l'acquisto migliore
+            const asset = result[bestAssetIdx];
+            const cost = unitSize * asset.price;
+            asset.newQuantity += unitSize;
+            asset.cost += cost;
+            remainingBudget -= cost;
+            currentPortfolioValue += cost;
+
+            // Aggiorna l'azione
+            const totalBought = asset.newQuantity - asset.currentQuantity;
+            asset.action = `Acquista ${formatNumber(totalBought)} unità`;
         }
 
-        // Calcola le percentuali finali basate sul valore totale DOPO gli acquisti
+        // Calcola le percentuali finali
+        const finalPortfolioValue = result.reduce((sum, a) => sum + (a.newQuantity * a.price), 0);
         result.forEach(asset => {
             const newValue = asset.newQuantity * asset.price;
-            asset.actualPercentage = totalInvestment > 0 ? (newValue / totalInvestment) * 100 : 0;
+            asset.actualPercentage = finalPortfolioValue > 0 ? (newValue / finalPortfolioValue) * 100 : 0;
         });
 
         return result;
