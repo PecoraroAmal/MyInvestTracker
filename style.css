@@ -324,7 +324,7 @@ body {
 /* Sezione download offline */
 .offline-notice {
     background-color: #e3f2fd;
-    border-left: 4px solid #007bff;
+    border-left: 4px solid #28a745;
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 2rem;
@@ -335,12 +335,12 @@ body {
 
 .offline-notice i {
     font-size: 1.5rem;
-    color: #007bff;
+    color: #28a745;
 }
 
 .offline-notice h3 {
     margin: 0;
-    color: #007bff;
+    color: #28a745;
     font-size: 1.2rem;
 }
 
