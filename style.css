@@ -293,6 +293,11 @@ body {
     transform: scale(0.98);
 }
 
+/* Icone bianche nel pulsante primario */
+.btn-primary i {
+    color: white;
+}
+
 /* Pulsante secondario */
 .btn-secondary {
     background-color: #28a745;
