@@ -1,21 +1,39 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "MyInvestTracker - Gestione Investimenti",
+  "short_name": "MyInvestTracker",
+  "description": "Gestisci i tuoi investimenti con privacy garantita. Tutti i dati rimangono sul tuo dispositivo.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#28a745",
+  "background_color": "#ffffff",
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
-      "sizes": "192x192",
+      "src": "/assets/favicon-96x96.png",
+      "sizes": "96x96",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
+      "src": "/assets/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "maskable any"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "categories": ["finance"],
+  "screenshots": [
+    {
+      "src": "/assets/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
 }

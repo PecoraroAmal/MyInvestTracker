@@ -56,6 +56,8 @@ if ('serviceWorker' in navigator) {
       .then(data => console.log('Manifest content:', data))
       .catch(error => console.error('Error fetching manifest:', error));
   });
+} else {
+  console.warn('Service Worker not supported in this browser');
 }
 
 // Mostra messaggi all'utente
