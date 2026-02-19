@@ -295,7 +295,7 @@ body {
 
 /* Pulsante secondario */
 .btn-secondary {
-    background-color: #007bff;
+    background-color: #28a745;
     color: white;
     border: none;
     padding: 0.7rem 1.4rem;
@@ -309,8 +309,12 @@ body {
     gap: 0.5rem;
 }
 
+.btn-secondary i {
+    color: white;
+}
+
 .btn-secondary:hover {
-    background-color: #0056b3;
+    background-color: #218838;
 }
 
 .btn-secondary:active {
