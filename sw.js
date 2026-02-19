@@ -1,32 +1,32 @@
-const CACHE_NAME = 'myinvesttracker-cache-v1.0';
+const CACHE_NAME = 'myinvesttracker-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/home.js',
-  '/style.css',
-  '/sw.js',
-  '/Tracker/tracker.html',
-  '/Tracker/tracker.js',
-  '/Tracker/tracker.css',
-  '/PAC/pac.html',
-  '/PAC/pac.js',
-  '/PAC/pac.css',
-  '/Variazione/variazione.html',
-  '/Variazione/variazione.js',
-  '/Variazione/variazione.css',
-  '/Editor/editor.html',
-  '/Editor/editor.js',
-  '/Editor/editor.css',
-  '/Calcolatrice/calcolatrice.html',
-  '/Calcolatrice/calcolatrice.js',
-  '/Calcolatrice/calcolatrice.css',
-  '/assets/favicon-96x96.png',
-  '/assets/favicon.svg',
-  '/assets/favicon.ico',
-  '/assets/apple-touch-icon.png',
-  '/assets/web-app-manifest-192x192.png',
-  '/assets/web-app-manifest-512x512.png',
-  '/assets/site.webmanifest',
+  '/MyInvestTracker/',
+  '/MyInvestTracker/index.html?v=1.0',
+  '/MyInvestTracker/home.js?v=1.0',
+  '/MyInvestTracker/style.css?v=1.0',
+  '/MyInvestTracker/sw.js?v=1.0',
+  '/MyInvestTracker/Tracker/tracker.html?v=1.0',
+  '/MyInvestTracker/Tracker/tracker.js?v=1.0',
+  '/MyInvestTracker/Tracker/tracker.css?v=1.0',
+  '/MyInvestTracker/PAC/pac.html?v=1.0',
+  '/MyInvestTracker/PAC/pac.js?v=1.0',
+  '/MyInvestTracker/PAC/pac.css?v=1.0',
+  '/MyInvestTracker/Variazione/variazione.html?v=1.0',
+  '/MyInvestTracker/Variazione/variazione.js?v=1.0',
+  '/MyInvestTracker/Variazione/variazione.css?v=1.0',
+  '/MyInvestTracker/Editor/editor.html?v=1.0',
+  '/MyInvestTracker/Editor/editor.js?v=1.0',
+  '/MyInvestTracker/Editor/editor.css?v=1.0',
+  '/MyInvestTracker/Calcolatrice/calcolatrice.html?v=1.0',
+  '/MyInvestTracker/Calcolatrice/calcolatrice.js?v=1.0',
+  '/MyInvestTracker/Calcolatrice/calcolatrice.css?v=1.0',
+  '/MyInvestTracker/assets/favicon-96x96.png',
+  '/MyInvestTracker/assets/favicon.svg',
+  '/MyInvestTracker/assets/favicon.ico',
+  '/MyInvestTracker/assets/apple-touch-icon.png',
+  '/MyInvestTracker/assets/web-app-manifest-192x192.png',
+  '/MyInvestTracker/assets/web-app-manifest-512x512.png',
+  '/MyInvestTracker/manifest.json',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-solid-900.woff2',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-brands-400.woff2'
@@ -84,11 +84,11 @@ self.addEventListener('fetch', event => {
           return fetchAndUpdateCache(event.request);
         }
         // If offline and not in cache, return fallback
-        return caches.match('/index.html');
+        return caches.match('/MyInvestTracker/index.html');
       })
       .catch(error => {
         console.error('Fetch failed:', error);
-        return caches.match('/index.html');
+        return caches.match('/MyInvestTracker/index.html');
       })
   );
 });

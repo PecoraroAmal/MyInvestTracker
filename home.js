@@ -36,8 +36,8 @@ let deferredPrompt;
 // Registra il service worker con gestione robusta
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    console.log('Attempting to register Service Worker at /sw.js');
-    navigator.serviceWorker.register('/sw.js', { scope: '/' })
+    console.log('Attempting to register Service Worker at /MyInvestTracker/sw.js');
+    navigator.serviceWorker.register('/MyInvestTracker/sw.js?v=1.0', { scope: '/MyInvestTracker/' })
       .then(registration => {
         console.log('Service Worker registered successfully:', registration);
         registration.update();
@@ -46,8 +46,8 @@ if ('serviceWorker' in navigator) {
         console.error('Service Worker registration failed:', error);
       });
     
-    console.log('Fetching manifest at /assets/site.webmanifest');
-    fetch('/assets/site.webmanifest')
+    console.log('Fetching manifest at /MyInvestTracker/manifest.json');
+    fetch('/MyInvestTracker/manifest.json')
       .then(response => {
         if (!response.ok) throw new Error(`Failed to load manifest: ${response.status} ${response.statusText}`);
         console.log('Manifest loaded successfully');
