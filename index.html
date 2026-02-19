@@ -11,13 +11,16 @@
     <link rel="shortcut icon" href="assets/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
-    
-    <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#28a745">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="MyInvestTracker" />
+    <script>
+        if (window.location.pathname + window.location.search !== '/MyInvestTracker/index.html?v=5.6') {
+            window.location.replace('/MyInvestTracker/index.html?v=5.6');
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -93,7 +96,7 @@
                 <i class="fas fa-download"></i>
                 <h3>Installa come App</h3>
                 <p>MyInvestTracker funziona completamente offline! Installalo sul tuo dispositivo per un accesso rapido e senza connessione. I tuoi dati rimangono sempre privati e locali.</p>
-                <button id="install-app" class="btn-secondary">
+                <button id="download-template" class="btn-primary">
                     <i class="fas fa-download"></i>
                     Installa MyInvestTracker
                 </button>
