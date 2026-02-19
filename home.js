@@ -56,14 +56,42 @@ function downloadTemplate() {
     URL.revokeObjectURL(url);
 }
 
+// Registra il service worker per il supporto offline
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').then(registration => {
+        console.log('Service Worker registered:', registration);
+    }).catch(error => {
+        console.error('Service Worker registration failed:', error);
+    });
+}
+
 // Event listener per il pulsante di download
 document.addEventListener('DOMContentLoaded', () => {
     const downloadButton = document.getElementById('download-template');
+    const downloadAppButton = document.getElementById('download-app');
     
     if (downloadButton) {
         downloadButton.addEventListener('click', downloadTemplate);
     }
+    
+    if (downloadAppButton) {
+        downloadAppButton.addEventListener('click', downloadApp);
+    }
 });
+
+// Funzione per scaricare l'app (PWA)
+function downloadApp() {
+    // Suggerisce di aggiungere alla schermata home
+    if (navigator.share) {
+        navigator.share({
+            title: 'MyInvestTracker',
+            text: 'Aggiungi MyInvestTracker alla tua schermata home',
+            url: window.location.href
+        }).catch(err => console.log('Errore nella condivisione:', err));
+    } else {
+        alert('Funzionalità PWA disponibile. Accedi dal browser mobile, apri il menu e cerca "Aggiungi alla schermata home" o "Install app".');
+    }
+}
 
 // Funzione per evidenziare il link attivo nella navbar
 function setActiveNavLink() {
